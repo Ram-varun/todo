@@ -12,15 +12,19 @@ export const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!value.trim()) return;
-    if (editIndex === '') {
-      setTodoList([...todoList, value.trim()])
+    if (todoList.indexOf(value.trim()) === -1) {
+      if (editIndex === '') {
+        setTodoList([...todoList, value.trim()])
+      } else {
+        let temp = [...todoList]
+        temp.splice(editIndex, 1, value.trim())
+        setTodoList([...temp])
+      }
+      setValue('')
+      setEditIndex('')
     } else {
-      let temp = [...todoList]
-      temp.splice(editIndex, 1, value.trim())
-      setTodoList([...temp])
+      alert("Already Added!!!")
     }
-    setValue('')
-    setEditIndex('')
   }
 
   const editItem = (item, index) => {
