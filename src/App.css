@@ -33,7 +33,8 @@ button{
 
 .curptr{
   cursor: pointer;
-}
+} 
+
 .list{
   margin: 15px;
   border: 1px solid black;

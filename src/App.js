@@ -5,18 +5,18 @@ import "./App.css";
 
 export const App = () => {
 
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const [todoList, setTodoList] = useState([]);
   const [editIndex, setEditIndex] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!value) return;
+    if (!value.trim()) return;
     if (editIndex === '') {
-      setTodoList([...todoList, value])
+      setTodoList([...todoList, value.trim()])
     } else {
       let temp = [...todoList]
-      temp.splice(editIndex, 1, value)
+      temp.splice(editIndex, 1, value.trim())
       setTodoList([...temp])
     }
     setValue('')
