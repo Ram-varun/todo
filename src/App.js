@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import "./App.css";
@@ -8,6 +8,10 @@ export const App = () => {
   const [value, setValue] = useState('');
   const [todoList, setTodoList] = useState([]);
   const [editIndex, setEditIndex] = useState('');
+
+  useEffect(()=>{
+    localStorage.setItem('todoList', todoList)
+  },[todoList])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,10 +43,10 @@ export const App = () => {
       setTodoList(val);
     }
   }
-
+  let datas = localStorage.getItem('todoList')
   return (
     <div className="App">
-      <h1>Todo List</h1>
+      <h1 className="heading">Todo List</h1>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="todo..." value={value} onChange={(e) => setValue(e.target.value)} autoFocus /><br />
         <button type="submit">Add</button>

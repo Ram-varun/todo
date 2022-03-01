@@ -1,5 +1,7 @@
 body{
   background-color: paleturquoise;
+  height: 100vh;
+  background-image: linear-gradient(to right top, #528de6, #557dee, #6a69f1, #874eec, #a614df);
 }
 
 .App {
@@ -8,6 +10,10 @@ body{
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.heading{
+  color: whitesmoke;
 }
 
 input{
@@ -21,14 +27,15 @@ input{
 
 button{
   margin: 15px;
-  height: 30px;
-  width: 70px;
+  /* height: 30px;
+  width: 70px; */
   border-radius: 10px;
   cursor: pointer;
-  background-color:rgb(235, 34, 44);
+  background-color:#FFC300;
   color: white;
   border: none;
   font-size: 19px;
+  padding: 10px 20px;
 }
 
 .curptr{
